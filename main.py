@@ -40,12 +40,6 @@ def start(message):
     update_messages_count(user_id)
 
 
-@bot.message_handler(func=lambda message: True, content_types=["text"])
-def message_from_user(message):
-    user_id = message.from_user.id
-    update_messages_count(user_id)
-
-
 @bot.message_handler(commands=["stats"])
 def get_stats(message):
     db_object.execute("SELECT * FROM users ORDER BY messages DESC LIMIT 10")
@@ -60,6 +54,14 @@ def get_stats(message):
         bot.reply_to(message, reply_message)
 
     update_messages_count(message.from_user.id)
+
+
+@bot.message_handler(func=lambda message: True, content_types=["text"])
+def message_from_user(message):
+    user_id = message.from_user.id
+    update_messages_count(user_id)
+
+
 
 
 
