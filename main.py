@@ -1,18 +1,18 @@
-# import os
-# import telebot
-# import logging
-# import psycopg2
-# from config import *
-# from flask import Flask, request
+import os
+import telebot
+import logging
+import psycopg2
+from config import *
+from flask import Flask, request
 
-# bot = telebot.TeleBot(BOT_TOKEN)
-# server = Flask(__name__)
-# """что это?"""
-# logger = telebot.logger
-# logger.setLevel(logging.DEBUG)
+bot = telebot.TeleBot(BOT_TOKEN)
+server = Flask(__name__)
+"""что это?"""
+logger = telebot.logger
+logger.setLevel(logging.DEBUG)
 
-# db_connection = psycopg2.connect(DB_URI, sslmode="require")
-# db_object = db_connection.cursor()
+db_connection = psycopg2.connect(DB_URI, sslmode="require")
+db_object = db_connection.cursor()
 
 
 
@@ -440,7 +440,6 @@ d = [
     "https://youtu.be/9IIo5EstpY0",
 ]
 
-bot = telebot.TeleBot("5159962929:AAE-FlImWfEisl4qQWnyFR5cPveGgA2srH8")
 
 
 
